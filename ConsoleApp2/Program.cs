@@ -2,6 +2,8 @@
 decimal dec1, dec2, dRes;
 float flo1, flo2, fRes;
 char c;
+char[] rev;
+string cadena;
 Console.WriteLine(@"1. Conversion de Tipos
 2. Operaciones con tipos de datos
 3. Uso de char y string
@@ -100,6 +102,64 @@ switch (choice)
                 ent2 = int.Parse(Console.ReadLine());
                 iRes = ent1 % ent2;
                 Console.WriteLine("El resultado es: " + iRes);
+                break;
+        }
+        break;
+    case 3:
+        Console.Clear();
+        Console.WriteLine(@"1. Texto a mayuscula
+2. Texto a minuscula
+3. Texto al reves
+4. Buscar una palabra
+5. Numero de vocales");
+        choice = int.Parse(Console.ReadLine());
+        switch (choice)
+        {
+            case 1:
+                Console.WriteLine("Ingrese una cadena de texto");
+                cadena=Console.ReadLine();
+                cadena=cadena.ToUpper();
+                Console.WriteLine("Texto a mayuscula: " + cadena);
+                break;
+            case 2:
+                Console.WriteLine("Ingrese una cadena de texto");
+                cadena = Console.ReadLine();
+                cadena = cadena.ToLower();
+                Console.WriteLine("Texto a minusucla: " + cadena);
+                break;
+            case 3:
+                Console.WriteLine("Ingrese una cadena de texto");
+                cadena = Console.ReadLine();
+                rev = cadena.ToCharArray();
+                Array.Reverse(rev);
+                cadena= new string(rev);
+                Console.WriteLine("Texto al reves: " + cadena);
+                break;
+            case 4:
+                Console.WriteLine("Ingrese una cadena de texto (Palabra a buscar: perro)");
+                cadena= Console.ReadLine();
+                if (cadena.Contains("perro")==true)
+                {
+                    Console.WriteLine("La cadena si tiene la palabra");
+                }
+                else 
+                {
+                    Console.WriteLine("La cadena no tiene la palabra");
+                }
+                break;
+            case 5:
+                ent1 = 0;
+                Console.WriteLine("Ingrese una cadena de texto");
+                cadena = Console.ReadLine();
+                string vowels = "aeiouAEIOU";
+                foreach (var a in cadena)
+                {
+                    if (vowels.Contains(a))
+                    {
+                        ent1++;
+                    }
+                }
+                Console.WriteLine("Numero de vocales: " + ent1);
                 break;
         }
         break;
