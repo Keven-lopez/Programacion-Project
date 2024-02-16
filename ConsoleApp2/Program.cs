@@ -1,6 +1,7 @@
-﻿int choice, ent1, ent2, iRes;
+﻿int choice, ent1, ent2,x,y, iRes;
 decimal dec1, dec2, dRes;
 float flo1, flo2, fRes;
+double dob,dobRes;
 char c;
 char[] rev;
 string cadena;
@@ -160,6 +161,56 @@ switch (choice)
                     }
                 }
                 Console.WriteLine("Numero de vocales: " + ent1);
+                break;
+        }
+        break;
+    case 4:
+        Console.Clear();
+        Console.WriteLine(@"1. Area de Triangulo
+2. Volumen de esfera
+3. Distancia de dos puntos
+4. Temperatura en Fahrenheit
+5. Temperatura en Celsius");
+        choice = int.Parse(Console.ReadLine());
+        switch (choice)
+        {
+            case 1:
+                Console.WriteLine("Ingrese base de triangulo");
+                dec1=decimal.Parse(Console.ReadLine());
+                Console.WriteLine("Ingrese altura de triangulo");
+                dec2 = decimal.Parse(Console.ReadLine());
+                dRes = (dec1 * dec2) / 2;
+                Console.WriteLine("El resultado es: " + dRes);
+                break;
+            case 2:
+                Console.WriteLine("Ingrese radio");
+                dob = double.Parse(Console.ReadLine());
+                dobRes = (Math.Pow(dob, 3) * Math.PI) * (4 / 3);
+                Console.WriteLine("El resultado es: " + dobRes);
+                break;
+            case 3:
+                Console.WriteLine("Ingrese x1");
+                ent1 = int.Parse(Console.ReadLine());
+                Console.WriteLine("Ingrese y1");
+                ent2 = int.Parse(Console.ReadLine());
+                Console.WriteLine("Ingrese x2");
+                x = int.Parse(Console.ReadLine());
+                Console.WriteLine("Ingrese y2");
+                y = int.Parse(Console.ReadLine());
+                iRes = (int)Math.Sqrt((Math.Pow((x - ent1), 2)) + Math.Pow((y-ent2),2));
+                Console.WriteLine("El resultado es: " + iRes);
+                break;
+            case 4:
+                Console.WriteLine("Ingrese temperatura en fahrenehiet");
+                ent1= int.Parse(Console.ReadLine());
+                iRes = (((ent1 - 32) * 5) / 9);
+                Console.WriteLine("Temperatura en celsius: " + iRes);
+                break;
+            case 5:
+                Console.WriteLine("Ingrese temperatura en celsius");
+                ent1 = int.Parse(Console.ReadLine());
+                iRes = (int)(ent1 * 1.8) + 32;
+                Console.WriteLine("Temperatura en fahrenheit: " + iRes);
                 break;
         }
         break;
